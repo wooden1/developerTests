@@ -3,7 +3,7 @@
 // Resource Routes
 $route = \Route\Route::getInstance();
 
-$route::resource('fruit', 'FruitController');
+$route::resource('fruits', 'FruitsController');
 
 /**
  * vars in query string can be differentiated by adding a type
@@ -12,4 +12,4 @@ $route::resource('fruit', 'FruitController');
  * most larger datasets are being send by post anyway, or in rare cases
  * JSON strings 
  */
-$route::controller('fruit/{name:string}', 'FruitController', 'getFruitByName');
+$route::controller('fruits/{name:string}', 'FruitsController', 'getFruitByName');
