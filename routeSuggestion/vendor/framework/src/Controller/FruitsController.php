@@ -4,7 +4,7 @@ namespace Controller;
 
 use System\Helpers\Arr;
 
-class FruitController extends Controller
+class FruitsController extends Controller
 {
     protected $_viewPath = 'View/';
 
