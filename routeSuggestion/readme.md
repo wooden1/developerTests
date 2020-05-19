@@ -2,10 +2,10 @@
 
 The source code contains a custom routing solution, using REST endpoints. If a route is misspelled, it will fail with an “Route/Controller/Method Not Found” exception. We would like to offer a suggestion to the best match existing route. 
 
-For example: if a developer, or a user of the application, tries to point to /department, which does not exist, we would want the suggestion to offer something along the lines of:
+For example: if a developer, or a user of the application, tries to point to /fruit, which does not exist, we would want the suggestion to offer something along the lines of:
 
 ```
-Route [ /department ] not found. “Did you mean ‘/departments’”?
+Route [ /fruit ] not found. “Did you mean ‘/fruits’”?
 ```
 
 The included source code includes a stripped down version of our framework, essentially bare-bones just to get the routes working. 
@@ -15,7 +15,7 @@ In __vendor__ > __framework__ > __src__ > __Route__, you will find the Routing c
 __RouteController.php__ contains the main Route class. Which will likely contain the bulk of the work for this project. A file __RouteSuggestion.php__ has been created in the Route folder. 
 
 Routes are organized in the Route class by their roots, i.e. the first word in the route. 
-- /__fruit__/1/edit, root = __fruit__
+- /__fruits__/1/edit, root = __fruits__
 
 Route::_roots[fruit] then points to a RouteRoot class which then does the rest of the storage and retrieval of route information. 
 This task is focused primarily on the key identifiers in the _roots array, catching the incoming route, comparing the root values and when a match is not found, throw a Suggestion. 
