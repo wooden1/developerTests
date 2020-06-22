@@ -14,7 +14,7 @@ The included source code includes a stripped down version of our framework, esse
 
 In __vendor__ > __framework__ > __src__ > __Route__, you will find the Routing classes.
 
-__RouteController.php__ contains the main Route class. Which will likely contain the bulk of the work for this project. A file __RouteSuggestion.php__ has been created in the Route folder. 
+__RouteController.php__ contains the main Route class. Which will likely contain the bulk of the work for this project. A file __RouteSuggestion.php__ has been created in the Route folder and namespace, feel free to use any other filename/structure for this task. 
 
 Routes are organized in the Route class by their roots, i.e. the first word in the route. 
 - /__fruits__/1/edit, root = __fruits__
