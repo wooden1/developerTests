@@ -15,6 +15,7 @@ User enters the string '__er__', which matches the entries _"N": "Novemb**er**"_
 - Any style you wish to use is acceptable, you are not restricted to using classes, functions, IIFEs, etc. 
 - The dropdown menu should be responsive to user input, adding/removing elements as needed
 - If possible within the time-frame, a simple UX feature would be to highlight the matching substring within the result set dropdown
+- Possible extendable option: fuzzy searches, rather than explicit substring results
 - We use Mocha/Chai to write our JS tests
 - We estimate this should take less than 90 minutes to implement.
 
