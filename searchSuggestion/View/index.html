@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <title>Search Trial</title>
+   </head>
+   <style>
+      body {
+         margin: 0;
+         padding: 0;
+      }
+
+      body div {
+         box-sizing: border-box;
+         -moz-box-sizing: border-box;
+         -webkit-box-sizing: border-box;
+      }
+
+      .v100h {
+         height: 100vh;
+      }
+
+      .v100w {
+         width: 100vw;
+      }
+
+      .v50h {
+         height: 50vh;
+      }
+
+      .v50w {
+         width: 50vw;
+      }
+
+      .flex-col {
+         display: flex;
+         flex-direction: column;
+      }
+
+      .flex-row {
+         display: flex;
+         flex-direction: row;
+      }
+
+      .flex-center {
+         justify-content: center;
+      }
+
+      .flex-start {
+         justify-content: flex-start;
+      }
+
+      .flex-end {
+         justify-content: flex-end;
+      }
+
+      .margin-auto {
+         margin: 0 auto;
+      }
+
+      .bg-grey-70 {
+         background-color: hsl(0, 0%, 70%);
+      }
+      .bg-grey-80 {
+         background-color: hsl(0, 0%, 80%);
+      }
+
+      .bdr-grey {
+         border: 1px solid hsl(0, 0%, 60%);
+         border-radius: 3px;
+      }
+
+      .input-text {
+         height: 52px;
+         font-size: 26px;
+         color: hsl(220, 10%, 50%);
+         padding-left: 16px;
+         width: 75%;
+         border-radius: 3px;
+         border: 1px solid hsl(0, 0%, 50%);
+      }
+   </style>
+   <body>
+      <div class="flex-col flex-center v100h v100w bg-grey-80">
+         <div class="flex-col flex-center v50h v50w margin-auto bdr-grey bg-grey-70">
+            <div class="flex-row flex-center">
+               <input type="text" class="input-text" name="input_text" id="input_text" placeholder="Enter text..." />
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

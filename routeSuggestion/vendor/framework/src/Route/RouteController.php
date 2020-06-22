@@ -2,7 +2,7 @@
 
 namespace Route;
 
-class Route
+class RouteController
 {
     protected static $_roots = []; // container array for routes
     protected $_nonStaticRoots = [];
@@ -11,13 +11,13 @@ class Route
     public static function getInstance()
     {
         if (self::$instance == null) {
-            self::$instance = new Route();
+            self::$instance = new RouteController();
             self::_generateHomeRoute();
         }
         return self::$instance;
     }
 
-    /** 
+    /**
      * Direct method to generate the index pointer to HomeController
      *
      * @return void
@@ -181,6 +181,7 @@ class Route
      */
     private static function _getRoot($root): \Route\RouteRoot
     {
+        // [REMOVED FOR DEVELOPER TESTING] - ROUTE NOT FOUND
         return self::$_roots[$root];
     }
 
@@ -207,7 +208,6 @@ class Route
     {
         return $routeRoot->getMethod($route, $verb);
     }
-
 
     public static function overrideExistingRoute($route, $controller, $method, $verb)
     {

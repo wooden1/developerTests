@@ -8,7 +8,7 @@
  */
 
 // Resource Routes
-$route = \Route\Route::getInstance();
+$route = \Route\RouteController::getInstance();
 
 $route::resource('fruits', 'FruitsController');
 
