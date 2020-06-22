@@ -1,6 +1,8 @@
 ## Route Suggestion:
 
-The source code contains a custom routing solution, using REST endpoints. If a route is misspelled, it will fail with an “Route/Controller/Method Not Found” exception. We would like to offer a suggestion to the best match existing route. 
+The source code contains a custom routing solution, using REST endpoints. If a route is misspelled, it will fail with an “Route/Controller/Method Not Found” exception in production. To make debugging easier, these exceptions were removed, and you get an _Undefined index_ error. 
+
+We would like to offer a suggestion to the best match existing route. 
 
 For example: if a developer, or a user of the application, tries to point to /fruit, which does not exist, we would want the suggestion to offer something along the lines of:
 
