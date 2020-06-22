@@ -5,6 +5,7 @@ namespace Route;
 class Route
 {
     protected static $_roots = []; // container array for routes
+    protected $_nonStaticRoots = [];
     protected static $instance;
 
     public static function getInstance()

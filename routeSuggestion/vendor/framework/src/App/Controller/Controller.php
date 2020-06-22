@@ -4,8 +4,6 @@ namespace Controller;
 
 use Exception;
 use Middleware\AuthenticationMiddleware as Authenticate;
-use Resource\Display as Display;
-use Resource\GlobalHandler as GlobalHandler;
 use Resource\Status as Status;
 
 class Controller implements \Ifs\ControllerInterface
@@ -37,8 +35,6 @@ class Controller implements \Ifs\ControllerInterface
     {
     }
 
-
-
     private function _createPDOManager()
     {
         return new \Proaction\Database\Manager\Manager();
@@ -69,7 +65,6 @@ class Controller implements \Ifs\ControllerInterface
     {
         $this->setDisplayAttribute('rand', rand(0, 200000));
     }
-
 
     /**
      *
@@ -130,8 +125,8 @@ class Controller implements \Ifs\ControllerInterface
      */
     public function render($filePath, $data = [])
     {
+        // render method has been removed for this demonstration
     }
-
 
     /**
      * redirect
@@ -147,7 +142,6 @@ class Controller implements \Ifs\ControllerInterface
         }
         header('Location: ' . $url);
     }
-
 
     /**
      * Binds repository to top level Controller::prop via pre-defined Repository::root value, becomes $this->[root]
@@ -175,9 +169,8 @@ class Controller implements \Ifs\ControllerInterface
         }
     }
 
-
     /**
-     * Deprecated. As you refactor, remove calls to _data, and replace 
+     * Deprecated. As you refactor, remove calls to _data, and replace
      * with props obj
      *
      * @param array $data
