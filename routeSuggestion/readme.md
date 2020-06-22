@@ -1,6 +1,8 @@
 ## Route Suggestion:
 
-The source code contains a custom routing solution, using REST endpoints. If a route is misspelled, it will fail with an “Route/Controller/Method Not Found” exception. We would like to offer a suggestion to the best match existing route. 
+The source code contains a custom routing solution, using REST endpoints. If a route is misspelled, it will fail with an “Route/Controller/Method Not Found” exception in production, sending the user to a 404 page. To make debugging easier, these exceptions were removed, and you get an _Undefined index_ error. 
+
+We would like to offer a suggestion to the best match existing route. 
 
 For example: if a developer, or a user of the application, tries to point to /fruit, which does not exist, we would want the suggestion to offer something along the lines of:
 
@@ -12,7 +14,7 @@ The included source code includes a stripped down version of our framework, esse
 
 In __vendor__ > __framework__ > __src__ > __Route__, you will find the Routing classes.
 
-__RouteController.php__ contains the main Route class. Which will likely contain the bulk of the work for this project. A file __RouteSuggestion.php__ has been created in the Route folder. 
+__RouteController.php__ contains the main Route class. Which will likely contain the bulk of the work for this project. A file __RouteSuggestion.php__ has been created in the Route folder and namespace, feel free to use any other filename/structure for this task. 
 
 Routes are organized in the Route class by their roots, i.e. the first word in the route. 
 - /__fruits__/1/edit, root = __fruits__
