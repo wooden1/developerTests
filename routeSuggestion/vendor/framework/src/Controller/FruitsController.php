@@ -4,6 +4,9 @@ namespace Controller;
 
 use System\Helpers\Arr;
 
+/**
+ * A simple controller class, extending our Controller/Controller
+ */
 class FruitsController extends Controller
 {
     protected $_viewPath = 'View/fruits';
@@ -29,7 +32,7 @@ class FruitsController extends Controller
         echo "<h2>$class::$func()</h2>";
 
         // this means we can access the id value by using:
-        echo '<h3>My fruit id is: ' . $this->props->id . '</h3>';
+        echo "<h3>My fruit id is: " . $this->props->id . "</h3>";
 
         // this was far cleaner than treating incoming data as an array
         // and having to do $this->props['name']
