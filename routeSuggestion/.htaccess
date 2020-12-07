@@ -1,6 +1,7 @@
 RewriteEngine On
 RewriteBase /developerTests/routeSuggestion/
 
+
 RewriteCond %{REQUEST_URI} !^/(module|module/.*)$ 
 # RewriteCond %{REQUEST_URI} !(\.css|\.js|\.png|\.jpg|\.gif|robots\.txt)$ [NC]
 RewriteCond %{REQUEST_FILENAME} !-f
