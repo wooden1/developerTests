@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="_calc_root.css">
+  <title>Bidding Calculator Form</title>
+</head>
+
+<body>
+  <!-- use action attribute to sent data to backend ex: action="/contract_bidder.php" -->
+  <form action="" method="get" class="bid-form">
+    <h1>Contract bidding Calculator</h1>
+    <div class="form-container-one">
+
+      <div><label for="name">Name:</label><input type="text" id="name" name="name"></div>
+
+      <!-- provide email validation pattern -->
+      <div><label for="email">Email:</label><input type="text" id="email" name="email"></div>
+
+      <div><label for="industry">Industry:</label><input type="text" id="industry" name="industry"></div>
+
+      <div class="cost-of-goods"><label for="cost-of-goods">Cost of goods sold:</label><input type="text"
+          id="cost-of-goods" name="cost-of-goods"></div>
+    </div>
+
+    <button class="add-row">Add Row </button>
+    <div class="form-container-two">
+      <div>
+        <label for="overhead">Overhead:
+        </label>
+        <input type="text" id="overhead" name="overhead">
+      </div>
+      <div>
+        <label for="overhead-category">Overhead Category
+        </label>
+        <input type="text" id="overhead-category" name="overhead-category">
+      </div>
+      <div>
+        <label for="total-overhead">Total Overhead
+        </label>
+        <input type="text" id="total-overhead" name="total-overhead">
+      </div>
+      <div>
+        <label for="total-cost-of-goods-sold">Total Cost of Goods Sold</label>
+        <input type="text" id="total-cost-of-goods-sold" name="total-cost-of-goods-sold">
+      </div>
+      <div>
+
+        <label for="profit">Profit</label>
+        <input type="text" id="profit" name="profit">
+      </div>
+      <button type="button" id="get-total">Get Total</button>
+      <div>
+        <label for="total">Total</label>
+        <input type="text" id="total" name="total">
+      </div>
+    </div>
+  </form>
+</body>
+<script src="index.js"></script>
+
+</html>
