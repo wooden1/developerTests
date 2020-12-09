@@ -12,6 +12,8 @@
   --mg-4x: calc(var(--pd-unit) * 4);
 
   /* Colors */
+  --bg-clr: #feca57;
+  --form-bg: #cccccc;
   --cell-bg: #446084;
   --cell-border: #1b2a3d;
   --font-heading-color: hsl(65, 46%, 95%);
@@ -29,22 +31,47 @@
   /* Input values */
   --text-input-padding: var(--pd-2x);
   --text-input-size: var(--text-imp);
+
+  /* Border */
+  --border_radius: 5px;
 }
 * {
+  box-sizing: border-box;
+  color: var(--font-color);
   margin: 0;
   padding: 0;
-  color: var(--font-color);
 }
+
+/* Main content container */
+.container {
+  background-color: var(--bg-clr);
+  display: grid;
+  margin: 0.3rem auto;
+  text-align: center;
+  padding: var(--pd-2x);
+  margin: 0 auto 0.1em auto;
+  width: 100%;
+}
+
+/* Bid Form*/
 .bid-form {
+  background-color: var(--form-bg);
   display: table;
   padding: var(--pd-2x);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
+  margin: auto;
+  width: 90%;
+}
+
+fieldset {
+  margin: 0.3rem auto;
+  padding: 0.3rem;
 }
 
 h1 {
-  text-align: center;
+  border: solid 1px var(--cell-border);
+  border-radius: var(--border_radius);
+  margin-bottom: 1.2rem;
+  /* margin-bottom: var(--mg-2x); */
 }
 .form-table {
   display: table-row;
@@ -52,14 +79,30 @@ h1 {
 
 label,
 input {
+  border-radius: var(--border_radius);
   display: table-cell;
+  padding: 0.3em;
   width: 100%;
 }
 input {
+  background-color: var(--cell-bg);
   margin-bottom: var(--mg-2x);
   padding: var(--pd-1x);
 }
 
 button {
-  background-color: var(--btn-action);
+  background-color: var(--cell-bg);
+  border-radius: 50%;
+  background-clip: padding-box;
+  padding: 0.2em;
+  font-size: var(--text-imp);
+  width: 3.5rem;
+}
+
+.form-send_btn {
+  width: 100%;
+  border-radius: 5%;
+}
+#overhead {
+  margin-top: 1.2rem;
 }
