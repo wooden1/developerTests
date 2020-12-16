@@ -2,43 +2,68 @@
 const BiddingCalculator = (function () {
   ;('use strict')
   const bid_info = []
+
   const addRowButton = document.querySelector('.add-row')
-  // grabbed this one to copy the innerHTML to clean up that long str
-  const costOFGoodsRow = document.querySelector('#cost-of-goods-sold')
+
+  const costOfGoodsValue = document.querySelectorAll('.cost-of-goods-sold')
+
+  const costForGoodsSold = document.querySelector('.cost-for-goods-sold')
+
   const totalOverhead = document.querySelector('#total-overhead')
-  const totalCostOFGoods = document.querySelector('#total-cost-of-goods-sold')
+
+  const totalCostOFGoodsSold = document.querySelector(
+    '#total-cost-of-goods-sold'
+  )
+
   const profit = document.querySelector('#profit')
   const total = document.querySelector('#total')
   const sumOverheadBtn = document.querySelector('#get-overhead-sum')
   const contratorInfoForm = document.querySelector('#contractor-info_form')
+  const goodsSoldBtn = document.querySelector('.form-send_btn')
+
+  const overheadCosts = document.querySelectorAll('.overhead-costs')
 
   function eventListeners() {
-    addRowButton.addEventListener('click', (event) => {
-      // event.preventDefault()
-      addRow(event)
-    })
+    addRowButton.addEventListener('click', (event) => addRow(event))
+
     sumOverheadBtn.addEventListener('click', (event) => {
-      // event.preventDefault()
-      sumOFTotals(event)
+      totalOverhead.value = overheadCost(event)
+      // sumOFTotals(event))
+    })
+    goodsSoldBtn.addEventListener('click', (event) => {
+      costOfGoodsSoldTotal(event)
+      costOfGoodsValue.value = ''
     })
   }
 
-  // FIXME: get add row working again
+  // Adds a new cost of goods sold row
   function addRow() {
     const newRow = document.createElement('div')
     newRow.classList.add('cost-for-goods-sold')
-    newRow.innerHTML = costOFGoodsRow.innerHTML
+    newRow.innerHTML = costForGoodsSold.innerHTML
     return contratorInfoForm.appendChild(newRow)
   }
-  // TODO: get values from cost for goods to fill total cost
-  function sumOfGoodsSold() {
-    return (totalCostOFGoods.value = parseFloat(costForGoodsRow))
+
+  // TODO:  abstract function to work with both total overhead and cost of goods sold totals
+  function overheadCost() {
+    const overheadValArr = []
+    for (let i = 0; i < overheadCosts.length; i++) {
+      if (typeof overheadCosts[i].value !== NaN) {
+        overheadValArr.push(parseFloat(overheadCosts[i].value))
+      } else {
+        console.log('Error: Please enter Numbers only')
+      }
+    }
+
+    return overheadValArr
+      .filter((value) => !Number.isNaN(value))
+      .reduce((accumulator, currentValue) => accumulator + currentValue)
+      .toFixed(2)
   }
+
   function sumOFTotals() {
     return (total.value =
-      parseFloat(totalOverhead) +
-      parseFloat(sumOfGoodsSold()) +
-      parseFloat(profit))
+      parseFloat(totalOverhead) + parseFloat() + parseFloat(profit))
   }
 
   eventListeners()

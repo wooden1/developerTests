@@ -59,7 +59,7 @@
   display: table;
   padding: var(--pd-2x);
   margin: auto;
-  width: 90%;
+  /* width: 100%; */
 }
 
 fieldset {
@@ -102,6 +102,7 @@ button {
 .form-send_btn {
   width: 100%;
   border-radius: 5%;
+  margin-top: 0.5rem;
 }
 #overhead {
   margin-top: 1.2rem;
