@@ -28,6 +28,7 @@ const BiddingCalculator = (function () {
 
     sumOverheadBtn.addEventListener('click', (event) => {
       totalOverhead.value = overheadCost(event)
+      overheadCosts.value = ''
       // sumOFTotals(event))
     })
     goodsSoldBtn.addEventListener('click', (event) => {
@@ -45,12 +46,14 @@ const BiddingCalculator = (function () {
   }
 
   // TODO:  abstract function to work with both total overhead and cost of goods sold totals
+  //? input values should clear after getting total overhead
   function overheadCost() {
     const overheadValArr = []
     for (let i = 0; i < overheadCosts.length; i++) {
       if (typeof overheadCosts[i].value !== NaN) {
         overheadValArr.push(parseFloat(overheadCosts[i].value))
       } else {
+        // TODO: Create UI error message
         console.log('Error: Please enter Numbers only')
       }
     }
